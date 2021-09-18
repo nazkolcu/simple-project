@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Add User</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+          integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/shards.min.css">
+
+</head>
+<body>
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <a class="navbar-brand" href="/index">Demo</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/index">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/signup">Add New User</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/address">Add Address to Users</a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+<div class="card my-5 offset-md-3" style="width: 30rem;">
+    <div class="card-header">
+        Add Address to Existing Users
+    </div>
+    <div class="card-body">
+
+        <div class="col-md-12 mb-4" th:object="${users}">
+            <select class="form-control" id="userSelect" name="userSelect" onchange="userSelected()">
+                <option value="0">Select User</option>
+                <option th:each="user1 : ${users}"
+                        th:value="${user1.id}"
+                        th:text="${user1.name}"></option>
+            </select>
+
+        </div>
+        <form >
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <label for="street" class="col-form-label">Street</label>
+                    <input type="text" class="form-control" id="street" placeholder="street" required>
+
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="city" class="col-form-label">City</label>
+                    <input type="text" class="form-control" id="city" placeholder="city" required>
+
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="number" class="col-form-label">Number</label>
+                    <input type="text" class="form-control" id="number" placeholder="number" required>
+
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="zipcode" class="col-form-label">Zipcode</label>
+                    <input type="text" class="form-control" id="zipcode" placeholder="zipcode" required>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mt-4">
+                    <input type="submit" class="btn btn-primary" value="Add Address" id="btn" onclick="addressSave()">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script type="text/javascript"
+        src="webjars/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="js/address.js"></script>
+
+</body>
+</html>
