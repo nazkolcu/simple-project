@@ -18,15 +18,13 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private long id;
+
     @Column(name = "name")
     private String name;
+
     @Column(name = "price")
     private BigDecimal price;
 
     @ManyToMany(mappedBy = "books")
     private List<Order> orders;
-
-
-
-
 }

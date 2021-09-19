@@ -20,10 +20,13 @@ public class Address {
 
     @Column(name="street")
     private String street;
+
     @Column(name="number")
     private int number;
+
     @Column(name="city")
     private String city;
+
     @Column(name="zipcode")
     private int zipcode;
 

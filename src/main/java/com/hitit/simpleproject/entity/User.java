@@ -28,18 +28,12 @@ public class User {
     @Column(name = "email")
     private String email;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "address_id", referencedColumnName = "id")
-    private Address address;
-
-
     @OneToMany(mappedBy = "user")
     private List<Order> orders;
 
-
-
-
-
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
+    private Address address;
 
     public User(String name, String email) {
         this.name = name;
@@ -54,5 +48,4 @@ public class User {
                 .address(this.address)
                 .build();
     }
-
 }
