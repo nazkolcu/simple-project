@@ -12,33 +12,6 @@ function userSave() {
         timeout: 600000,
         success: function (data) {
             location.reload();
-           // $("#usersTable").load(location.href + " #usersTable");
-            /*var table = document.getElementById ("usersTable");
-            table.refresh ();*/
-         //   loadSearchResult();
-
         }
     });
 }
-/*
-function loadSearchResult()
-{
-
-    $.ajax({
-        type: 'get',
-        url: "/index",
-
-        success: function(data){
-
-
-
-
-            $('.container').html(data);
-
-
-
-        },
-
-    })
-
-}*/

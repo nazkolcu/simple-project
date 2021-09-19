@@ -7,29 +7,38 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-
+@Table(name = "user")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+    @Column(name = "id")
     private long id;
 
-
+    @Column(name = "name")
     private String name;
 
-
+    @Column(name = "email")
     private String email;
 
-    @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)//!!!! LAZY oldu bilgi gelmedi
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
+
+
+    @OneToMany(mappedBy = "user")
+    private List<Order> orders;
+
+
+
+
 
 
     public User(String name, String email) {

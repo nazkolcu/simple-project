@@ -9,12 +9,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
-public class AddressServiceImpl implements AddressService{
+public class AddressServiceImpl implements AddressService {
 
     private final UserService userService;
     private final AddressRepository addressRepository;
+
     AddressServiceImpl(AddressRepository addressRepository, UserService userService) {
-        this.addressRepository=addressRepository;
+        this.addressRepository = addressRepository;
         this.userService = userService;
     }
 

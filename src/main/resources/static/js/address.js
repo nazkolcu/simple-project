@@ -7,7 +7,6 @@ function inputsClear() {
     document.getElementById('number').value = '';
     document.getElementById('street').value = '';
     document.getElementById('zipcode').value = '';
-
 }
 
 function inputsDisabled(arg) {

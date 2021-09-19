@@ -11,19 +11,20 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "address")
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+    @Column(name="id")
     private long id;
 
-
+    @Column(name="street")
     private String street;
-
+    @Column(name="number")
     private int number;
-
+    @Column(name="city")
     private String city;
-
+    @Column(name="zipcode")
     private int zipcode;
 
     @JsonIgnore
