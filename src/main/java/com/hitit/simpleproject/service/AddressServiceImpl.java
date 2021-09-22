@@ -1,9 +1,8 @@
 package com.hitit.simpleproject.service;
 
 import com.hitit.simpleproject.entity.Address;
-import com.hitit.simpleproject.entity.DTO.AddressDTO;
+import com.hitit.simpleproject.entity.dto.AddressDTO;
 import com.hitit.simpleproject.entity.User;
-import com.hitit.simpleproject.repository.AddressRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,15 +11,13 @@ import org.springframework.transaction.annotation.Transactional;
 public class AddressServiceImpl implements AddressService {
 
     private final UserService userService;
-    private final AddressRepository addressRepository;
 
-    AddressServiceImpl(AddressRepository addressRepository, UserService userService) {
-        this.addressRepository = addressRepository;
+    AddressServiceImpl(UserService userService) {
         this.userService = userService;
     }
 
     public Address create(AddressDTO addressDto) {
-        User user = userService.findById(Long.valueOf(addressDto.getId())).orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + Long.valueOf(addressDto.getId())));
+        User user = userService.findById(addressDto.getId()).orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + Long.valueOf(addressDto.getId())));
 
         Address address = new Address();
         address.setCity(addressDto.getCity());

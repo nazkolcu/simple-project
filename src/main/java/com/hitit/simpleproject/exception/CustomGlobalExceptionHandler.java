@@ -6,16 +6,13 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.time.LocalDateTime;
 
 @ControllerAdvice
 public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(UserNotFoundException.class)
-    public ResponseEntity<CustomErrorResponse> customHandleNotFound(Exception ex, WebRequest request) throws IOException{
+    public ResponseEntity<CustomErrorResponse> customHandleNotFound(Exception ex, WebRequest request){
       CustomErrorResponse errors = new CustomErrorResponse();
       errors.setTimeStamp(LocalDateTime.now());
       errors.setError(ex.getMessage());

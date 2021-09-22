@@ -1,7 +1,7 @@
 package com.hitit.simpleproject.controller;
 
 
-import com.hitit.simpleproject.entity.DTO.AddressDTO;
+import com.hitit.simpleproject.entity.dto.AddressDTO;
 import com.hitit.simpleproject.service.AddressService;
 import com.hitit.simpleproject.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

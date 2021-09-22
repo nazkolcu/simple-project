@@ -1,4 +1,4 @@
-package com.hitit.simpleproject.entity.DTO;
+package com.hitit.simpleproject.entity.dto;
 
 
 import com.hitit.simpleproject.entity.Address;

@@ -1,6 +1,6 @@
 package com.hitit.simpleproject.entity;
 
-import com.hitit.simpleproject.entity.DTO.UserDTO;
+import com.hitit.simpleproject.entity.dto.UserDTO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

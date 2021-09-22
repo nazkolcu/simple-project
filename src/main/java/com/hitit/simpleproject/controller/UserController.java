@@ -1,7 +1,7 @@
 package com.hitit.simpleproject.controller;
 
 
-import com.hitit.simpleproject.entity.DTO.UserDTO;
+import com.hitit.simpleproject.entity.dto.UserDTO;
 import com.hitit.simpleproject.entity.User;
 import com.hitit.simpleproject.exception.UserNotFoundException;
 import com.hitit.simpleproject.service.UserService;
@@ -12,7 +12,6 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 
 @Controller
 public class UserController {
